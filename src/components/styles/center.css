@@ -19,8 +19,6 @@
   letter-spacing: 0.2rem;
   display: grid;
   grid-template-rows: 85% 15%;
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
 }
 
 .card-img {
@@ -28,13 +26,14 @@
   background-position: center;
   border-radius: 5px;
   filter: drop-shadow(0px 10px 10px black);
+  transform: perspective(1000);
 }
 
 .card:hover {
   transition: 300ms;
-  border: 5px solid white;
+  border: 2px solid white;
 }
 
 .card {
-  border: 5px solid transparent;
+  border: 2px solid transparent;
 }
