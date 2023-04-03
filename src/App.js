@@ -1,27 +1,11 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable no-unused-vars */
-import { useState, createContext } from 'react';
-
+import { useEffect, useState } from 'react';
+import cardsValues from './components/CardsValues';
 import './App.css';
 import Header from './components/Header';
 import Center from './components/Center';
 import Footer from './components/Footer';
-
-const Context = createContext();
-
-const cardsValues = [
-  {
-    id: 0,
-    name: 'Din Jarin',
-    photo: './imgs/din-jarin.png',
-    selected: false,
-  },
-  {
-    id: 0,
-    name: 'Grogu',
-    photo: './imgs/baby-yoda.jpg',
-    selected: false,
-  },
-];
 
 function App() {
   const [cards, setCards] = useState(cardsValues);
@@ -32,31 +16,30 @@ function App() {
     return cards[id].selected;
   }
 
-  function changeScore(newScore, newBestScore) {
-    setScore(newScore);
-    setBestScore(newBestScore);
-  }
-
   function update(id) {
     const newCards = [...cards];
     newCards[id] = { ...newCards[id], selected: true };
     setCards(newCards);
-    changeScore(score + 1, bestScore + 1);
+    setScore(score + 1);
   }
 
   function reset() {
-    changeScore(0, 0);
-    setScore(cards.map((item) => ({ ...item, selected: true })));
+    setScore(0);
+    setCards(cards.map((item) => ({ ...item, selected: false })));
   }
 
   function selectCard(id) {
-    const a = verify(id) ? update(id) : reset();
+    const a = !verify(id) ? update(id) : reset();
   }
+
+  useEffect(() => {
+    if (score > bestScore) setBestScore(score);
+  }, [score, bestScore]);
 
   return (
     <div className="App">
-      <Header />
-      <Center cards={cards} />
+      <Header score={score} bestScore={bestScore} />
+      <Center cards={cards} selectCard={selectCard} />
       <Footer />
     </div>
   );

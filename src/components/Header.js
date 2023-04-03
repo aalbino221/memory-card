@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import logo from './assets/star-wars-logo-1002.png';
 import './styles/header.css';
 
-export default function Header() {
+export default function Header({ score, bestScore }) {
   return (
     <div className="header">
       <img src={logo} alt="" id="logo" />
@@ -9,11 +10,11 @@ export default function Header() {
       <div>
         <p>
           Score:
-          <span> 0</span>
+          <span>{score}</span>
         </p>
         <p>
           Best Score:
-          <span> 0</span>
+          <span>{bestScore}</span>
         </p>
       </div>
     </div>

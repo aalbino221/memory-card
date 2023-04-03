@@ -32,5 +32,9 @@
 
 .card:hover {
   transition: 300ms;
-  transform: rotate3d(1, 1, 0, -25deg);
+  border: 5px solid white;
+}
+
+.card {
+  border: 5px solid transparent;
 }
