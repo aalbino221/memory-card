@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export default [
   {
     id: 0,
@@ -31,7 +32,7 @@ export default [
   },
   {
     id: 5,
-    name: 'Anakin Skywalker',
+    name: 'Anakin',
     photo: './imgs/anakin.webp',
     selected: false,
   },
@@ -59,6 +60,9 @@ export default [
     photo: './imgs/darth-maul.jpg',
     selected: false,
   },
+];
+
+const cardsValue2 = [
   {
     id: 10,
     name: 'Han Solo',

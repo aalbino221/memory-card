@@ -21,14 +21,20 @@ export default function Center({ cards, selectCard }) {
   }
 
   useEffect(() => {
-    setNumbersArray(randomNumbersArray(5, 19));
+    setNumbersArray(randomNumbersArray(5, 10));
   }, [cards]);
 
   // exemplo de uso:
   return (
     <div className="center">
       {numbersArray.map((index) => (
-        <Tilt glareEnable glareColor="white" glareBorderRadius="1px" glarePosition="bottom" glareMaxOpacity={0.3}>
+        <Tilt
+          glareEnable
+          glareColor="white"
+          glareBorderRadius="1px"
+          glarePosition="bottom"
+          glareMaxOpacity={0.3}
+        >
           <div
             className="card"
             onClick={() => selectCard(cards[index].id)}
