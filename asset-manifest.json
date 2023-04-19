@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/memory-card/static/css/main.b22fd44c.css",
+    "main.js": "/memory-card/static/js/main.8bbc4efb.js",
+    "static/js/787.d6a8b40f.chunk.js": "/memory-card/static/js/787.d6a8b40f.chunk.js",
+    "static/media/background.jpg": "/memory-card/static/media/background.31fb84790204215d9be8.jpg",
+    "static/media/StarJediOutline.ttf": "/memory-card/static/media/StarJediOutline.f7accd2946bcbf115782.ttf",
+    "static/media/StarjediRegular.ttf": "/memory-card/static/media/StarjediRegular.8d577dc1e1755c4860f3.ttf",
+    "static/media/star-wars-logo-1002.png": "/memory-card/static/media/star-wars-logo-1002.699b38f8f80449694c71.png",
+    "index.html": "/memory-card/index.html",
+    "main.b22fd44c.css.map": "/memory-card/static/css/main.b22fd44c.css.map",
+    "main.8bbc4efb.js.map": "/memory-card/static/js/main.8bbc4efb.js.map",
+    "787.d6a8b40f.chunk.js.map": "/memory-card/static/js/787.d6a8b40f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b22fd44c.css",
+    "static/js/main.8bbc4efb.js"
+  ]
+}
