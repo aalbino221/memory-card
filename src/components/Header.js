@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import logo from './assets/star-wars-logo-1002.png';
 import './styles/header.css';
 
-export default function Header({ score, bestScore }) {
+function Header({ score, bestScore }) {
   return (
     <div className="header">
       <img src={logo} alt="" id="logo" />
@@ -20,3 +20,10 @@ export default function Header({ score, bestScore }) {
     </div>
   );
 }
+
+Header.propTypes = {
+  score: PropTypes.number.isRequired,
+  bestScore: PropTypes.number.isRequired,
+};
+
+export default Header;

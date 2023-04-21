@@ -1,11 +1,9 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import Tilt from 'react-parallax-tilt';
 import './styles/center.css';
 
-export default function Center({ cards, selectCard }) {
+function Center({ cards, selectCard }) {
   const [numbersArray, setNumbersArray] = useState([]);
 
   function randomNumbersArray(length, max) {
@@ -34,6 +32,7 @@ export default function Center({ cards, selectCard }) {
           glareBorderRadius="1px"
           glarePosition="bottom"
           glareMaxOpacity={0.3}
+          key={cards[index].id}
         >
           <div
             className="card"
@@ -54,3 +53,17 @@ export default function Center({ cards, selectCard }) {
     </div>
   );
 }
+
+Center.propTypes = {
+  cards: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      photo: PropTypes.string.isRequired,
+      selected: PropTypes.bool.isRequired,
+    }),
+  ).isRequired,
+  selectCard: PropTypes.func.isRequired,
+};
+
+export default Center;
